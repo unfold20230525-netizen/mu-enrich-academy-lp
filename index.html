@@ -555,6 +555,15 @@
     }
     @media(max-width:380px){.benefits-intro h2,.practice-chapter .practice-heading h2{font-size:29px}.practice-chapter .flow-copy h3{font-size:19px}}
     @media print{.benefits{padding-block:40px}.benefits-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;break-inside:avoid}.benefit-summary h3{font-size:25px}.benefit-summary>p:last-child{font-size:12px}.curriculum-chapter{padding-bottom:30px}.materials>.wrap{padding-top:30px}.benefit-details summary{font-size:12px}}
+    /* Mobile hero: show the whole salon photo as a band under the nav instead of a cropped full-bleed background. */
+    @media(max-width:760px){
+      .hero{--hero-photo-top:74px;--hero-photo-height:calc(100vw*941/1672);min-height:0;align-items:flex-start}
+      .hero-photo{top:var(--hero-photo-top);bottom:auto;height:var(--hero-photo-height);object-fit:cover;object-position:center}
+      .hero:before{background:linear-gradient(180deg,transparent 0,transparent calc(var(--hero-photo-top) + var(--hero-photo-height)*.55),rgba(9,9,9,.75) calc(var(--hero-photo-top) + var(--hero-photo-height)*.85),#090909 calc(var(--hero-photo-top) + var(--hero-photo-height)))}
+      .hero:after{background:none}
+      .hero-inner{padding-top:calc(var(--hero-photo-top) + var(--hero-photo-height) + 18px)}
+    }
+    @media(max-width:400px){.hero-caption{left:24px;right:auto;bottom:56px}}
   </style>
 </head>
 <body>
